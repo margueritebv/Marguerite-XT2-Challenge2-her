@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.sky {
+  z-index: -2;
+  background: skyblue;
+  height: 80vh;
+}
+
+.stars {
+  background: linear-gradient(black, transparent),
+    url(https://images.unsplash.com/photo-1513112300738-bbb13af7028e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80)
+      no-repeat center;
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  height: 80vh;
+  width: 100%;
+}
+
+.stars-animation {
+  animation: starry-sky 6s ease-in forwards;
+}
+
+.sun {
+  z-index: 1;
+  top: 10em;
+  border-radius: 50%;
+  box-shadow: 0 0 40px gold;
+  position: absolute;
+  background: gold;
+  width: 8em;
+  height: 8em;
+  align-self: center;
+}
+
+.sun-animation {
+  animation: sunset 6s ease-in-out 0.6s forwards;
+}
+
+.horizon {
+  box-shadow: 0 -5px 10px #8fbc8b;
+  background: #8fbc8b;
+  height: 20vh;
+  z-index: 99;
+}
+
+.horizon-animation {
+  animation: horizon-darken 6s ease-in forwards;
+}
+
+@keyframes sunset {
+  100% {
+    top: 82vh;
+    background: brown;
+    box-shadow: 0 0 20px orangered;
+  }
+}
+
+@keyframes horizon-darken {
+  90% {
+    height: 20vh;
+  }
+  100% {
+    background: #0b0c0a;
+    box-shadow: 0 -5px 10px #0b0c0a;
+    height: 31vh;
+  }
+}
+
+@keyframes starry-sky {
+  100% {
+    opacity: 1;
+  }
+}
